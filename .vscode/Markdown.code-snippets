@@ -1,0 +1,13 @@
+{
+"Insight de Mobilidade Urbana": {
+    "prefix": "smartcity",
+    "body": [
+        "### Análise de Mobilidade: ${1:Bairro/Região}",
+        "- **Data da Observação:** $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR",
+        "- **Problema Identificado:** $2",
+        "- **Hipótese de Solução:** $3",
+        "- **Métrica Sugerida (ETR):** $4"
+    ],
+    "description": "Estrutura para notas de cidades inteligentes"
+}
+}
