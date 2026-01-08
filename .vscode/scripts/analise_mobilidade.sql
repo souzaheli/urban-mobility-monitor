@@ -1,7 +1,8 @@
--- colunas que nos interessam para a análise de Smart City
+-- Cálculo do Índice de Saturação de Via (ISV)
+-- Objetivo: Identificar gargalos de mobilidade urbana
 SELECT bairro,
-    fluxo_veiculos,
-    etr_indice -- fonte dos dados
-    (fluxo_veiculos * 0.12) AS estimativa_co2_kg
-FROM trafego_campo_grande -- apenas o que é "Crítico": Bairros com entropia acima de 0.80
-WHERE etr_indice > 0.70;
+    horario_pico,
+    ((fluxo_veiculos * 1.0) / capacidade_via) * 100 AS percentual_saturacao
+FROM trafego_mobilidade
+WHERE ((fluxo_veiculos * 1.0) / capacidade_via) * 100 > 70;
+-- Alerta de saturação alta
